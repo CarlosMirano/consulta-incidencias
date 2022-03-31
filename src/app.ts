@@ -2,6 +2,7 @@ import express, { Application } from 'express';
 import morgan from 'morgan';
 import indexRoutes from './routes/index.routes';
 import authRoutes from './routes/auth.routes';
+import dolarRoutes from './routes/dolar.routes';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
@@ -30,6 +31,7 @@ export class App {
   routes() {
     this.app.use(indexRoutes);
     this.app.use('/auth/login', authRoutes);
+    this.app.use('/dolar', dolarRoutes);
   }
 
   async listen(): Promise<void> {
